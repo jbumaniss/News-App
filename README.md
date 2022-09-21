@@ -66,12 +66,6 @@
 ### 5. Generate app key
 
 ```
-php artisan key:generate
-```
-
-### 6. Generate app key
-
-```
 composer install
 ```
 
@@ -79,6 +73,12 @@ composer install
 
 ```
 composer install --ignore-platform-reqs
+```
+
+### 6. Generate app key
+
+```
+php artisan key:generate
 ```
 
 ### 7. Migrate database migrations to fill your database with all the necessary tables and columns:
