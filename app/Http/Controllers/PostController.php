@@ -56,7 +56,7 @@ class PostController extends Controller
         $formFields = $request->validate([
             'title' => ['required', 'min:3'],
             'category' => ['required', 'min:3'],
-            'imageUrl' => 'min:3',
+            'imageUrl' => 'nullable',
             'comment' => ['required', 'min:3'],
         ]);
 

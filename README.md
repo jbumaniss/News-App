@@ -63,25 +63,59 @@
 
 ## Execute commands specified in terminal successfully:
 
-### 5. Migrate database migrations to fill your database with all the necessary tables and columns:
+### 5. Generate app key
+
+```
+php artisan key:generate
+```
+
+### 6. Generate app key
+
+```
+composer install
+```
+
+#### if fails try this 
+
+```
+composer install --ignore-platform-reqs
+```
+
+### 7. Migrate database migrations to fill your database with all the necessary tables and columns:
 
 ```
 php artisan migrate
 ```
 
-###  6. Default images are located in public/images:
+### 8. Populate database user table and category table
+
+```
+php artisan db:seed
+```
+
+###  9. Default images are located in public/images:
 #### newsicon.png for icon
 #### no-image.jpg for alternative image if no image exists
 
-### 7. Run the App command:
+### 10. Run the App command:
 
 ````
 php artisan serve
 ````
 
-### 8. Register in register page to login and use app
+### 11. Register in register page to login and use app
 
-### 9. To use administration mode need to set in your database users table isAdmin field with digit:1 if user is admin.
+### 12. To use administration mode need to set in your database users table isAdmin field with digit:1 if user is admin
+### or login in demo admin account login 
+
+#### login
+````
+john@smith.com
+````
+#### password
+````
+123456
+````
 
 ## Enjoy!
 
