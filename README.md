@@ -108,7 +108,7 @@ php artisan serv
 ````
 
 ### 11. Open your browser and navigate to http://127.0.0.1:8000:
-#### or if in your terminal is written different address navigate to it
+#### or if in your terminal is written different address navigate to it in your favorite web browser
 #### or for shortcut press ctrl and left mouse button in your terminal on your generated address should open browser with served page
 
 ![Screenshot](phpartisanserv.png)
