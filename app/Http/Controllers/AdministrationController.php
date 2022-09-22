@@ -15,12 +15,12 @@ class AdministrationController extends Controller
 
     public function managePosts(Post $post): View
     {
-        return view('administration.admin-manage-posts', ['posts' => $post->get()]);
+        return view('administration.admin-manage-posts', ['posts' => $post->latest()->paginate(6)]);
     }
 
     public function manageComments(Comment $comment): View
     {
-        return view('administration.admin-manage-comments', ['comments' => $comment->get()]);
+        return view('administration.admin-manage-comments', ['comments' => $comment->latest()->paginate(6)]);
     }
 
     public function manageCategories(): View
@@ -30,7 +30,7 @@ class AdministrationController extends Controller
 
     public function manageUsers(): View
     {
-        return view('administration.admin-manage-users', ['users' => User::all()]);
+        return view('administration.admin-manage-users', ['users' => User::latest()->paginate(6)]);
     }
 
     public function store(Request $request): RedirectResponse

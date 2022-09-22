@@ -25,7 +25,7 @@ class PostController extends Controller
     {
         return view('posts.show', [
             'post' => $post,
-            'comments' => Comment::latest()->paginate(6),
+            'comments' => Comment::latest()->get(),
         ]);
     }
 
@@ -37,7 +37,7 @@ class PostController extends Controller
 
         return view('posts.category-show', [
             'posts' => Post::latest()->paginate(6),
-            'comments' => Comment::latest()->paginate(6),
+            'comments' => Comment::latest()->get(),
             'categories' => Category::all(),
             'cat' => $cat
         ]);
@@ -83,7 +83,7 @@ class PostController extends Controller
         $formFields = $request->validate([
             'title' => ['required', 'min:3'],
             'category' => ['required', 'min:3'],
-            'imageUrl' => 'min:3',
+            'imageUrl' => 'nullable',
             'comment' => ['required', 'min:3'],
         ]);
 
@@ -102,7 +102,7 @@ class PostController extends Controller
 
     public function manage(): View
     {
-        return view('posts.manage', ['posts' => auth()->user()->post()->get()]);
+        return view('posts.manage', ['posts' => auth()->user()->post()->latest()->paginate(6)]);
     }
 
 

@@ -51,5 +51,6 @@
 
             </tbody>
         </table>
+        {{ $comments->links() }}
     </div>
 </x-layout>
