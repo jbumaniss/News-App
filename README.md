@@ -1,136 +1,103 @@
+# News App
 
+This application, built using PHP with Laravel framework and MySql, along with Alpine.js and jQuery, serves as a platform for posting and commenting with an integrated administration section. It's designed for demonstration purposes only.
 
-# News App for ITC
+## Features
 
-# Used PHP/PHP Extensions For Laravel and etc/Laravel/MySql/Alpine.js/jQuery
+### Public Main Page
+![Public Main Page Screenshot](mainPage.png)
 
-## Application for posting and commenting with administration section
+### Login Page
+![Login Page Screenshot](loginPage.png)
 
-## This app is only for demonstration purposes only!
+### Comments Section
+![Comments Section Screenshot](comments.png)
 
----
+### Single Post View
+![Single Post Screenshot](postPage.png)
 
-## Public Main Page
+### Admin Management Interface
+![Admin Management Screenshot](adminComments.png)
 
-![Screenshot](mainPage.png)
+## Requirements
 
+- Git
+- Code Editor (e.g., PHPStorm or any other)
+- MySql (or any compatible database for data storage)
+- PHP
+- PHP Extensions for Laravel
 
----
+## Installation Guide
 
-## Login 
+### Setting Up
 
-![Screenshot](loginPage.png)
+1. **Clone the Repository**: 
 
----
+       Clone or download the repository to your desired directory.
 
-## Comments
+3. **Open Terminal in Directory**: 
 
-![Screenshot](comments.png)
+        Ensure the terminal is opened at the root of the chosen directory.
 
----
+5. **Code Editor Setup**: 
 
-## Single Post 
+        Open the directory with your preferred code editor.
 
-![Screenshot](postPage.png)
+7. **Environment Configuration**: 
 
----
+        Rename `.env.example` file at the root to `.env`. Then, update the `.env` file with your database credentials:
+   
+    DB_HOST=your_mysql_ip_address
 
-## Admin Management and more ...
+    DB_DATABASE=your_databases_name
 
-![Screenshot](adminComments.png)
+    DB_USERNAME=your_mysql_username
 
----
+    DB_PASSWORD=your_mysql_password
 
+9. **Install Dependencies**: 
 
-# Requirements:
+    Run `composer install`. If there are any requirement issues, use `composer install --ignore-platform-reqs`.
 
-### Git 
-### Code Editor PHPSTORM or any other
-### Mysql or any other database for information storing
-### PHP
-### PHP Extensions For Laravel and etc
+10. **Generate Application Key**:
 
----
+    php artisan key:generate
 
-# How To Set up:
+11. **Database Migration**: 
 
-## Execute commands specified in terminal successfully:
+    Execute `php artisan migrate` to create necessary tables and columns in your database.
 
-### 1. Clone or download with Git to your chosen directory
+12. **Database Seeding**: 
 
-### 2. In your chosen directory open terminal
-#### Terminal should be open in chosen directory root!
+    Populate the database with initial data using `php artisan db:seed`.
 
-### 3. Open chosen directory with your chosen editor.
+13. **Run the Application**:
 
-### 4. Rename .env.example file from your chosen directory root to .env in same directory.
+    php artisan serv
+    
+    Then, navigate to the address indicated in the terminal (default: `http://127.0.0.1:8000`).
 
-### 5. Next fill the renamed .env file from your core directory with your credentials:
-#### DB_HOST=your_mysql_ip_address
-#### DB_DATABASE=your_databases_name
-#### DB_USERNAME=your_mysql_database_username
-#### DB_PASSWORD=your_mysql_database_password if is set if not leave empty
+15. **Accessing the Application**:
 
-### 6. Run composer to install required packages
+ - **Register**: To create posts, register on the registration page.
+ - **Demo Admin Account**: For admin access, use the following credentials:
 
-```
-composer install
-```
+    ```
+   Email: john@smith.com
+   Password: 123456
+   ```
 
-#### if a command failed because of requirements try this command instead
+    Alternatively, set admin mode in the users table by changing the `isAdmin` field.
 
-```
-composer install --ignore-platform-reqs
-```
+### Default Resources
 
-### 7. Generate app key
+- Favicon and Navigation Icon: `public/images/newsicon.png`
+- Placeholder Image for Missing Images: `public/images/no-image.jpg`
 
-```
-php artisan key:generate
-```
+## Usage
 
-### 8. Migrate database migrations to fill your database with all the necessary tables and columns:
-
-```
-php artisan migrate
-```
-
-### 9. Populate database with required users table and categories table
-
-```
-php artisan db:seed
-```
-
-### 10. Run the App command:
-
-````
-php artisan serv
-````
-
-### 11. Open your browser and navigate to http://127.0.0.1:8000:
-#### or if in your terminal is written different address navigate to it in your favorite web browser
-#### or for shortcut press ctrl and left mouse button in your terminal on your generated address should open browser with served page
-
-![Screenshot](phpartisanserv.png)
-
-### 12. Register in register page to make posts, comments are public with any name and email. 
-
-### 13. Demo admin account login for administration:
-
-##### login
-````
-john@smith.com
-````
-##### password
-````
-123456
-````
-#### Or set admin mode in your database:   in users table:   in isAdmin field:   fill with digit:1 or 0 if is not admin
-
-## Enjoy!
+Enjoy the functionality of the News App, including creating posts, commenting, and managing content through the admin panel.
 
 ---
 
-#### Default images are located in public/images:
-#### newsicon.png for favicon and navicon
-#### no-image.jpg for alternative image as if there is no image
+**Note**: This application is intended for demonstration purposes and not for production use.
