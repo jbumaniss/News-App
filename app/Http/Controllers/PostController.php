@@ -29,7 +29,7 @@ class PostController extends Controller
         ]);
     }
 
-    public function showCategory($cat): object
+    public function showCategory($cat): View|RedirectResponse
     {
         if ($cat == 'all'){
            return redirect('/');

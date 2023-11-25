@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class UserController extends Controller
 {
-    public function create()
+    public function create(): View
     {
         return view('users.register');
     }
@@ -21,7 +22,7 @@ class UserController extends Controller
             'name' => ['required', 'min:3'],
             'surname' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
-            'password' => 'required| confirmed| min:6'
+            'password' => ['required', 'confirmed', Password::default()]
         ]);
 
         $formFields['password'] = bcrypt($formFields['password']);
