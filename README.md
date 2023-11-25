@@ -35,17 +35,17 @@ This application, built using PHP with Laravel framework and MySql, along with A
 
        Clone or download the repository to your desired directory.
 
-3. **Open Terminal in Directory**: 
+2. **Open Terminal in Directory**: 
 
         Ensure the terminal is opened at the root of the chosen directory.
 
-5. **Code Editor Setup**: 
+3. **Code Editor Setup**: 
 
         Open the directory with your preferred code editor.
 
-7. **Environment Configuration**: 
+4. **Environment Configuration**: 
 
-        Rename `.env.example` file at the root to `.env`. Then, update the `.env` file with your database credentials:
+        Rename `.env.example` file at the root to `.env`. Then, update the `.env` file with or without your database credentials:
    
     DB_HOST=your_mysql_ip_address
 
@@ -54,30 +54,27 @@ This application, built using PHP with Laravel framework and MySql, along with A
     DB_USERNAME=your_mysql_username
 
     DB_PASSWORD=your_mysql_password
+5. **Install Dependencies**: 
 
-9. **Install Dependencies**: 
+    Run `./vendor/bin/sail composer install`. If there are any requirement issues, use `composer install --ignore-platform-reqs`.
 
-    Run `composer install`. If there are any requirement issues, use `composer install --ignore-platform-reqs`.
+6. **Generate Application Key**:
 
-10. **Generate Application Key**:
+    `./vendor/bin/sail artisan key:generate`
 
-    php artisan key:generate
+7. **Database Migration**: 
 
-11. **Database Migration**: 
+    Execute `./vendor/bin/sail artisan migrate` to create necessary tables and columns in your database.
 
-    Execute `php artisan migrate` to create necessary tables and columns in your database.
+8. **Database Seeding**: 
 
-12. **Database Seeding**: 
+    Populate the database with initial data using `./vendor/bin/sail artisan migrate artisan db:seed`.
 
-    Populate the database with initial data using `php artisan db:seed`.
-
-13. **Run the Application**:
-
-    php artisan serv
+9.**Visit the Application**:
     
     Then, navigate to the address indicated in the terminal (default: `http://127.0.0.1:8000`).
 
-15. **Accessing the Application**:
+10.**Accessing the Application**:
 
  - **Register**: To create posts, register on the registration page.
  - **Demo Admin Account**: For admin access, use the following credentials:
